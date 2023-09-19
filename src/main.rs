@@ -2,13 +2,16 @@
 async fn main() {
     let api_url = "https://cat-fact.herokuapp.com/facts/";
 
+    // use await since get_mock_response returns a future trait
     let response = get_mock_response(api_url).await;
 
     match response {
         Ok(fetched_response) => {
+            // prints the fetched response using debugging macro
             dbg!(fetched_response);
         }
         Err(_) => {
+            // halts the program with a panic message
             panic!("Response Fetch Error");
         }
     }
