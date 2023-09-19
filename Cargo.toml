@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-# serializing Rust data structures into JSON format (serialization)
+# Serializing Rust data structures into JSON format (serialization)
 # Deserializing JSON data into Rust data structures (deserialization).
 
 serde_json = "1.0.107"

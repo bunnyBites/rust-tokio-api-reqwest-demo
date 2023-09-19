@@ -18,7 +18,11 @@ async fn main() {
 }
 
 async fn get_mock_response(url: &str) -> Result<serde_json::Value, reqwest::Error> {
-    let response = reqwest::get(url).await?.json::<serde_json::Value>().await?;
+    let response = reqwest::get(url) // API GET request
+        .await?
+        .json::<serde_json::Value>() // deserialize response to Rust Data structure
+        .await?;
 
+    // Wrap response in Ok which is a variant of Result Enum
     Ok(response)
 }
